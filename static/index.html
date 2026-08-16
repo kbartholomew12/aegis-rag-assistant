@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aegis is a portfolio prototype demonstrating retrieval-augmented generation, AI governance guardrails, and human-in-the-loop policy guidance." />
+  <title>Aegis | Responsible AI Knowledge Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">A</div>
+      <div>
+        <div class="brand-name">Aegis</div>
+        <div class="brand-sub">Responsible AI Knowledge Assistant</div>
+      </div>
+    </div>
+    <div class="prototype">FICTIONAL LAW FIRM PROTOTYPE</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">ASTER & VALE LLP · INTERNAL AI GOVERNANCE</div>
+      <h1>Ask before you AI.</h1>
+      <p>This demonstration shows how a bounded AI knowledge assistant can retrieve, reconcile, and explain internal governance policies without inventing answers outside its approved knowledge base.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="ask-card">
+        <div class="demo-intro">
+          <div class="label">TRY THE DEMONSTRATION</div>
+          <h2>Select one of the sample questions below.</h2>
+          <p>Each question demonstrates a different RAG and governance behavior. Select a question to place it in the box, then click <strong>Check guidance</strong> to see the recommendation and the policy passages Aegis retrieved.</p>
+        </div>
+
+        <div class="demo-questions" aria-label="Demonstration questions">
+          <button class="demo-question">
+            <span class="scenario-number">01</span><span><strong>Prohibited use</strong>Can I summarize a client contract in a public chatbot?</span>
+          </button>
+          <button class="demo-question">
+            <span class="scenario-number">02</span><span><strong>Conditional use</strong>Can I use FirmAI Secure with privileged work product?</span>
+          </button>
+          <button class="demo-question">
+            <span class="scenario-number">03</span><span><strong>Incident response</strong>What should I do if I accidentally pasted client information into an unapproved AI tool?</span>
+          </button>
+          <button class="demo-question negative">
+            <span class="scenario-number">04</span><span><strong>Knowledge boundary</strong>What is the firm's maternity leave policy?</span>
+          </button>
+        </div>
+
+        <label class="question-label" for="question">Selected question</label>
+        <div class="input-wrap">
+          <textarea id="question" rows="4" maxlength="500" placeholder="Select a demonstration question above, or type a short AI-governance question."></textarea>
+          <button id="askBtn">Check guidance</button>
+        </div>
+        <div class="input-meta"><span id="charCount">0 / 500</span><span>Public demo: limited requests per visitor</span></div>
+
+        <p class="demo-note">The knowledge base is intentionally limited to fictional AI-governance policies. The fourth question is a negative-control example designed to show that Aegis refuses to infer a policy when the relevant information is not available.</p>
+      </div>
+
+      <div id="status" class="status hidden">Searching approved policy sources…</div>
+
+      <section id="answerPanel" class="answer-panel hidden" aria-live="polite">
+        <div class="answer-head">
+          <div><div class="label">RECOMMENDED ACTION</div><div id="actionBadge" class="action-badge"></div></div>
+          <div id="modeBadge" class="mode-badge"></div>
+        </div>
+
+        <div class="decision-grid">
+          <div class="decision-card"><div class="label">RISK LEVEL</div><div id="riskText" class="decision-value"></div></div>
+          <div class="decision-card"><div class="label">HUMAN REVIEW</div><div id="reviewText" class="decision-value"></div></div>
+        </div>
+
+        <div class="answer-copy"><h2>Guidance</h2><p id="answerText"></p></div>
+
+        <div class="trust-note"><strong>Human judgment stays in the loop.</strong> This assistant summarizes fictional internal policy. It does not provide legal advice and does not infer rules when the knowledge base lacks support.</div>
+
+        <div id="sourcesSection">
+          <div class="sources-head">
+            <div><div class="label">WHY THIS ANSWER?</div><h2>Retrieved policy passages</h2></div>
+            <button id="toggleSources" class="text-btn">Hide sources</button>
+          </div>
+          <div id="sources" class="sources"></div>
+        </div>
+
+        <div id="noSources" class="no-sources hidden">
+          <div class="label">SOURCE CHECK</div>
+          <h2>No supporting policy found</h2>
+          <p>The assistant refused to answer rather than force an unrelated policy match.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="how" id="how-it-works">
+      <div class="section-kicker">HOW AEGIS WORKS</div>
+      <h2>Generation is the last step, not the first.</h2>
+      <p class="how-intro">Aegis separates knowledge retrieval, governance decisions, and language generation so the LLM is not responsible for making the highest-risk policy choices.</p>
+      <div class="pipeline">
+        <article><div class="pipe-num">1</div><h3>Retrieve</h3><p>Search only the curated fictional policy library for relevant passages.</p></article>
+        <article><div class="pipe-num">2</div><h3>Guard</h3><p>Check knowledge boundaries, scenario type, policy hierarchy, and escalation rules.</p></article>
+        <article><div class="pipe-num">3</div><h3>Ground</h3><p>Send only the selected policy passages and scenario context to Claude.</p></article>
+        <article><div class="pipe-num">4</div><h3>Generate</h3><p>Claude synthesizes concise guidance from the retrieved sources rather than open-ended model knowledge.</p></article>
+        <article><div class="pipe-num">5</div><h3>Verify</h3><p>Show the primary and supporting sources and keep professional judgment in the loop.</p></article>
+      </div>
+      <div class="architecture-note"><strong>Portfolio architecture:</strong> FastAPI/Python backend · local policy knowledge base · TF-IDF retrieval with scenario-aware reranking · deterministic governance guardrails · Claude API grounded synthesis · source transparency.</div>
+    </section>
+
+    <section class="principles">
+      <div class="principle"><div class="num">01</div><h3>Bounded knowledge</h3><p>Questions outside the AI-governance library are refused instead of matched to unrelated policies.</p></div>
+      <div class="principle"><div class="num">02</div><h3>Policy hierarchy</h3><p>Controlling passages are marked as primary; supporting sources add restrictions or context.</p></div>
+      <div class="principle"><div class="num">03</div><h3>Escalation by design</h3><p>Incident response and high-risk situations prioritize human action rather than generic guidance.</p></div>
+    </section>
+  </main>
+
+  <footer>Portfolio prototype · All firm names, policies, tools, and scenarios are fictional.</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

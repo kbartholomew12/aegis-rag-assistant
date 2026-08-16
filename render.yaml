@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: aegis-rag-assistant
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-5
+      - key: DEMO_RATE_LIMIT_PER_HOUR
+        value: "8"
+      - key: DEMO_MAX_QUESTION_CHARS
+        value: "500"

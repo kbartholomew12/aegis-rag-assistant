@@ -1,0 +1,149 @@
+[
+  {
+    "id": "AI-001",
+    "title": "Responsible AI Use Policy",
+    "effective_date": "2026-07-01",
+    "sections": [
+      {
+        "section": "1.1",
+        "heading": "Purpose",
+        "text": "The firm permits use of approved artificial intelligence tools when they support client service, internal operations, research, drafting, learning, or administrative work and when use is consistent with confidentiality, professional judgment, data-handling, and human-review requirements."
+      },
+      {
+        "section": "2.1",
+        "heading": "Approved tools",
+        "text": "Firm personnel may use only AI tools approved by Information Security and listed in the Approved AI Tools Matrix for work involving firm or client information. Public consumer AI tools may be used only with public information and must not receive confidential, privileged, personal, restricted, or internal-only content."
+      },
+      {
+        "section": "3.1",
+        "heading": "Human accountability",
+        "text": "AI output is assistive. The individual using the output remains responsible for factual accuracy, legal analysis, citations, completeness, tone, and professional judgment. AI-generated content must not be represented as independently verified."
+      },
+      {
+        "section": "4.1",
+        "heading": "Prohibited uses",
+        "text": "Personnel must not use AI to make final legal judgments, provide unsupervised client advice, fabricate citations, impersonate a client or colleague, bypass access controls, or process information in a tool that is not approved for the relevant data classification."
+      }
+    ]
+  },
+  {
+    "id": "DATA-002",
+    "title": "Data Classification & Handling Standard",
+    "effective_date": "2026-06-15",
+    "sections": [
+      {
+        "section": "2.1",
+        "heading": "Public",
+        "text": "Public information may be used in approved or public AI tools when no contractual, copyright, licensing, or matter-specific restriction prohibits that use."
+      },
+      {
+        "section": "2.2",
+        "heading": "Internal",
+        "text": "Internal information is intended for firm personnel and approved service providers. It may be processed only in firm-approved AI environments configured not to train public models on firm inputs."
+      },
+      {
+        "section": "2.3",
+        "heading": "Confidential",
+        "text": "Confidential information includes nonpublic client information, business-sensitive firm information, personal information, draft work product, and matter information. It may be processed only in AI environments explicitly approved for confidential data and only when access is limited to authorized users."
+      },
+      {
+        "section": "2.4",
+        "heading": "Restricted",
+        "text": "Restricted information includes highly sensitive personal data, sealed materials, certain regulated records, credentials, encryption keys, and information subject to matter-specific restrictions. Restricted information must not be submitted to an AI system unless Information Security and the responsible attorney have explicitly approved the use case."
+      }
+    ]
+  },
+  {
+    "id": "CONF-003",
+    "title": "Client Confidentiality & Privilege Guidance",
+    "effective_date": "2026-07-10",
+    "sections": [
+      {
+        "section": "1.1",
+        "heading": "Confidentiality first",
+        "text": "Before using an AI tool with client or matter information, personnel must identify the data classification, confirm that the tool is approved for that classification, and consider any engagement-letter, protective-order, client, jurisdictional, or matter-specific restriction."
+      },
+      {
+        "section": "2.1",
+        "heading": "Privileged and work-product material",
+        "text": "Privileged communications and attorney work product require heightened care. Use is permitted only in approved firm systems that preserve access controls and confidentiality and only when the responsible attorney determines that the use is appropriate for the matter."
+      },
+      {
+        "section": "3.1",
+        "heading": "Client instructions",
+        "text": "Client-specific AI restrictions override general firm permissions. If a client prohibits generative AI for its matters, personnel must not use generative AI with that client's information even in an otherwise approved firm system."
+      },
+      {
+        "section": "4.1",
+        "heading": "Minimum necessary content",
+        "text": "When AI use is permitted, provide only the minimum information reasonably necessary for the task. Remove identifying, confidential, or privileged details when they are not needed to obtain a useful result."
+      }
+    ]
+  },
+  {
+    "id": "REVIEW-004",
+    "title": "Human Review & Professional Judgment Standard",
+    "effective_date": "2026-05-20",
+    "sections": [
+      {
+        "section": "1.1",
+        "heading": "Required review",
+        "text": "All AI-assisted work intended for a client, court, regulator, counterparty, public audience, or final internal decision must be reviewed by a qualified human before use."
+      },
+      {
+        "section": "2.1",
+        "heading": "Verification",
+        "text": "Reviewers must independently verify material facts, legal authorities, quotations, citations, calculations, and substantive conclusions. Links or citations supplied by an AI system must be checked against authoritative sources."
+      },
+      {
+        "section": "3.1",
+        "heading": "Risk-based review",
+        "text": "The depth of review should increase with the significance, sensitivity, novelty, and potential consequence of the work. High-impact legal advice, filings, client deliverables, and strategic recommendations require substantive attorney review."
+      }
+    ]
+  },
+  {
+    "id": "TOOLS-005",
+    "title": "Approved AI Tools Matrix",
+    "effective_date": "2026-08-01",
+    "sections": [
+      {
+        "section": "1.1",
+        "heading": "FirmAI Secure",
+        "text": "FirmAI Secure is approved for Public, Internal, and Confidential information. It uses firm authentication, access controls, enterprise retention settings, and contractual protections. Restricted information requires matter-specific approval."
+      },
+      {
+        "section": "1.2",
+        "heading": "ResearchAI Legal",
+        "text": "ResearchAI Legal is approved for legal research using Public and Internal information. Client Confidential information may be used only in designated private workspaces. Restricted information is not approved."
+      },
+      {
+        "section": "1.3",
+        "heading": "Public consumer chatbots",
+        "text": "Public consumer chatbots are approved only for Public information. Do not enter Internal, Confidential, Restricted, client, matter, employee, credential, or nonpublic firm information."
+      }
+    ]
+  },
+  {
+    "id": "ESC-006",
+    "title": "AI Incident & Escalation Protocol",
+    "effective_date": "2026-07-25",
+    "sections": [
+      {
+        "section": "1.1",
+        "heading": "When to escalate before use",
+        "text": "Escalate before use when the data classification is uncertain; the tool is not listed as approved; a client has unique AI restrictions; the task could materially affect legal rights; or the proposed workflow involves Restricted information."
+      },
+      {
+        "section": "2.1",
+        "heading": "Accidental disclosure",
+        "text": "If nonpublic information is entered into an unapproved AI tool, stop using the tool, do not delete or alter evidence of the event, and promptly notify the AI Governance Team and Information Security. The responsible attorney should also be informed when client or matter information is involved."
+      },
+      {
+        "section": "3.1",
+        "heading": "Uncertain answers",
+        "text": "If this knowledge assistant cannot locate a policy passage that directly supports an answer, it should state that the available sources are insufficient and direct the user to the AI Governance Team rather than infer a firm rule."
+      }
+    ]
+  }
+]
