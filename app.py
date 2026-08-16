@@ -241,7 +241,10 @@ USER QUESTION:
 RETRIEVED FIRM POLICY EXCERPTS:
 {context}
 
-Write a concise, direct answer. Do not merely restate the policy text."""
+Write a concise, direct answer in polished plain text.
+Do not use Markdown syntax, hash marks, asterisks, or Markdown headings.
+Use short paragraphs and numbered steps when helpful.
+Do not merely restate the policy text."""
         message = client.messages.create(
             model=model,
             max_tokens=350,
